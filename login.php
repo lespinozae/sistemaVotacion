@@ -32,7 +32,7 @@ require_once "header.php";
                                     <label>Contraseña </label>
                                     <input type="password" placeholder="Contraseña" class="form-control form-control-lg rounded-0" id="pwd1" required="" autocomplete="new-password">
                                 </div>
-                                <button type="button" class="btn btn-success btn-lg float-right">Login</button>
+                                <button type="button" class="btn btn-success btn-lg float-right">Acceder</button>
                             </form>
                         </div>
                         <!--/card-block-->
