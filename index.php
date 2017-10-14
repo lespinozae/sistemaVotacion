@@ -1,4 +1,8 @@
-Sitema Votacion iniciando
+<?php
+require_once "header.php";
 
-
-Prueba 1
+?>
+<a href="login.php"> Entrar</a>
+<?php
+require_once "footer.php";
+ ?>
