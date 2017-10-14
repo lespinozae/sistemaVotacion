@@ -1,5 +1,7 @@
 <?php
 
+require_once "MySqlProvider.php";
+
 class DatabaseLayer
 {
     //Almacena internamente el proveedor
@@ -15,7 +17,7 @@ class DatabaseLayer
           throw new Exception("El proveedor especificado no ha sido implentado o añadido.");
       }
       $this->provider = new $provider;
-      $this->provider->connect("localhost","root", "", "tuBaseDatos");
+      $this->provider->connect('localhost','lmanuel', 'sistemas', 'votacionesdb');
       if(!$this->provider->isConnected()){
           /*Controlar error de conexion*/
         }

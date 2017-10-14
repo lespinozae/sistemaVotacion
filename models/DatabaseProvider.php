@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 abstract class DatabaseProvider
 {
     //Guarda internamente el objeto de conexión
@@ -17,5 +19,5 @@ abstract class DatabaseProvider
     public abstract function isConnected();
     //Escapa los parámetros para prevenir inyección
     public abstract function escape($var);
-}  
+}
  ?>

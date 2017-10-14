@@ -1,13 +1,17 @@
 <?php
-class User()
+require_once "DatabaseLayer.php";
+
+class User
 {
   private $db;
 
-  __construct()
+  public function __construct()
   {
     $this->db = $db = DatabaseLayer::getConnection("MySqlProvider");
-    print_r($db->execute("SELECT id,email FROM users WHERE  name like ? LIMIT 20",array("ontuts%")));
-    echo($db->executeScalar("SELECT count(*) FROM users WHERE active=?",array(true)));
+    print_r($db->execute("SELECT cod,username FROM usuarios WHERE  username = ?",array("lmanuel")));
+    //echo($db->executeScalar("SELECT count(*) FROM users WHERE active=?",array(true)));
   }
 }
+
+$user = new User();
 ?>
