@@ -16,6 +16,7 @@ echo "<script type='text/javascript'>
   alert('Categoría Creada');
 </script>"; 
 
+
 } 
 
 
