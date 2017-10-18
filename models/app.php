@@ -1,7 +1,9 @@
 <?php
 require_once "DatabaseLayer.php";
+require_once "estudiante.php";
+require_once "categoria.php";
 
-class User
+class app
 {
   private $cod;
   private $nombreProyecto;
@@ -12,7 +14,9 @@ class User
   public function __construct()
   {
     $this->db = $db = DatabaseLayer::getConnection("MySqlProvider");
-
+    $this->estudiante = new estudiante();
+    $this->categoria = new categoria();
+    
     $datos = $db->execute("SELECT username, password FROM usuarios WHERE  username = ?",array($user));
 
     if (count($datos)>0)
@@ -25,19 +29,8 @@ class User
     }
   }
 
-  public function getAcceso($pwd){
-    $pwd=md5($pwd);
-    if ($this->pwd == $pwd)
-    {
-      session_start();
-      $_SESSION["user"] = $this->username;
-      $_SESSION["time"] = time();
-      echo "<script type='text/javascript'>
-            window.location='panel.php';
-          </script>";
-    }
-    else {
-      echo "Clave invalida";
-    }
+  public function categoria()
+  {
+    return $this->categoria;
   }
 }

@@ -1,5 +1,9 @@
 <?php
 require_once "headerp.php";
+require_once "models/app.php";
+
+$app = new app();
+
  ?>
  <h2>Agregar proyecto</h2>
  <br />
@@ -21,6 +25,10 @@ require_once "headerp.php";
     <div class="control-label col-sm-10" class="col-sm-10">
       <select name="cat" class="form-control" style="width: 100%" required>
         <option value="">Seleccione una opci&oacute;n</option>
+        <?php
+        $cat = $app->categoria()->todo();
+        print($cat);
+        ?>
       </select>
     </div>
   </div>

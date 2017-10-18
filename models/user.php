@@ -1,6 +1,5 @@
 <?php
 require_once "DatabaseLayer.php";
-
 class User
 {
   private $db;
@@ -22,7 +21,6 @@ class User
       echo "No existen datos";
     }
   }
-
   public function getAcceso($pwd){
     $pwd=md5($pwd);
     if ($this->pwd == $pwd)
@@ -38,6 +36,5 @@ class User
       echo "Clave invalida";
     }
 }
-
-
+}
 ?>
