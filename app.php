@@ -1,26 +1,27 @@
 <?php
 require_once "headerp.php";
  ?>
+ <h2>Agregar proyecto</h2>
+ <br />
 <form class="form-horizontal" enctype="multipart/form-data" method="post" action="app.php">
   <div class="form-group">
     <label class="control-label col-sm-2" for="email">Nombre del proyecto:</label>
     <div class="col-sm-10">
-      <input type="email" class="form-control" id="email" placeholder="Enter email" name="nproyect">
+      <input type="email" class="form-control" required id="email" placeholder="Nombre del proyecto" name="nproyect">
     </div>
   </div>
   <div class="form-group">
     <label class="control-label col-sm-2" for="pwd">Imagen:</label>
     <div class="col-sm-10">
-      <input type="file" class="form-control" id="pwd" placeholder="Enter password" name="img">
+      <input type="file" class="form-control" required id="pwd" placeholder="Imagen" name="img">
     </div>
   </div>
   <div class="form-group">
     <label class="control-label col-sm-2" for="pwd">Categoria:</label>
-    <div class="col-sm-10">
-      <select name="cat" required>
-        <option value=""></option>
+    <div class="control-label col-sm-10" class="col-sm-10">
+      <select name="cat" class="form-control" style="width: 100%" required>
+        <option value="">Seleccione una opci&oacute;n</option>
       </select>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
     </div>
   </div>
   <div class="form-group">
