@@ -9,7 +9,7 @@ class User
   private $estudiante;
   private $categoria;
 
-  public function __construct($user)
+  public function __construct()
   {
     $this->db = $db = DatabaseLayer::getConnection("MySqlProvider");
 
