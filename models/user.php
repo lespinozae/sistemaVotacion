@@ -28,6 +28,9 @@ class User
     $pwd=md5($pwd);
     if ($this->pwd == $pwd)
     {
+      session_start();
+      $_SESSION["user"] = $this->username;
+      $_SESSION["time"] = time();
       echo "<script type='text/javascript'>
             window.location='panel.php';
           </script>";
