@@ -3,10 +3,11 @@ require_once "DatabaseLayer.php";
 
 class User
 {
-  private $db;
-  private $id;
-  private $username;
-  private $pwd;
+  private $cod;
+  private $nombreProyecto;
+  private $img;
+  private $estudiante;
+  private $categoria;
 
   public function __construct($user)
   {
