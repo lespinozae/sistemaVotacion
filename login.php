@@ -1,5 +1,17 @@
 <?php
 require_once "header.php";
+
+
+if (isset($_POST) and isset($_POST["username"]))
+{  error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
+  require_once "models/user.php";
+
+  $user = new User($_POST["username"]);
+  $user->getAcceso($_POST["pwd"]);
+}
+
 ?>
 <style>
   form {
@@ -23,16 +35,16 @@ require_once "header.php";
                             <h3 class="mb-0">Login</h3>
                         </div>
                         <div class="card-body">
-                            <form class="form" role="form" autocomplete="off" id="formLogin">
+                            <form class="form" action="login.php" method="post" role="form" autocomplete="off" id="formLogin">
                                 <div class="form-group">
                                     <label for="uname1">Usuario </label>
-                                    <input type="text" placeholder="Nombre de usuario" class="form-control form-control-lg rounded-0" name="uname1" id="uname1" required="">
+                                    <input type="text" placeholder="Nombre de usuario" class="form-control form-control-lg rounded-0" name="username" id="uname1" required="">
                                 </div>
                                 <div class="form-group">
                                     <label>Contraseña </label>
-                                    <input type="password" placeholder="Contraseña" class="form-control form-control-lg rounded-0" id="pwd1" required="" autocomplete="new-password">
+                                    <input type="password" placeholder="Contraseña" class="form-control form-control-lg rounded-0" id="pwd" name="pwd" required="" autocomplete="new-password">
                                 </div>
-                                <button type="button" class="btn btn-success btn-lg float-right">Acceder</button>
+                                <button class="btn btn-success btn-lg float-right">Acceder</button>
                             </form>
                         </div>
                         <!--/card-block-->

@@ -3,10 +3,20 @@ require_once "header.php";
 
 require_once "models/DatabaseLayer.php";
 
-if (isset($_POST['enviar'])) {
+if (!empty($_POST))
+{
 
-print ('Hola Mundo');
-}
+$cate=$_POST['ncategoria'];
+
+$db = DatabaseLayer::getConnection("MySqlProvider"); 
+
+$db->execute("insert into categorias(descripcionCategoria) values (?)",array($cate));
+
+echo "<script type='text/javascript'>
+  alert('Categoría Creada');
+</script>"; 
+
+} 
 
 
 ?>
@@ -41,9 +51,5 @@ print ('Hola Mundo');
 </div>
 
 <?php
-
-
-
-
 require_once "footer.php";
  ?>
